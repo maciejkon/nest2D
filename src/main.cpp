@@ -99,11 +99,11 @@ PYBIND11_MODULE(nest2D, m)
             return std::unique_ptr<SVGWriter>(new SVGWriter(conf));
         }))
         .def("write_packgroup", [](SVGWriter & sw, const PackGroup & pgrp) {
-            sw.setSize(Box(libnest2d::mm(250), libnest2d::mm(210)));  // TODO make own call
+            sw.setSize(Box(libnest2d::mm(350), libnest2d::mm(310)));  // TODO make own call
             sw.writePackGroup(pgrp);
         })
         .def("save", [](SVGWriter & sw) {
-            sw.save("out");
+            sw.save("endFile");
         })
         .def("__repr__",
              [](const SVGWriter &sw) {
